@@ -1,8 +1,15 @@
 import './bootstrap';
-import {createApp} from "vue"
-import CommerceHeader from "../components/organisms/CommerceHeader.vue"
+import { createApp, h } from 'vue'
+import { createInertiaApp } from '@inertiajs/vue3'
 
-const app = createApp()
-app.component('commerce-header', CommerceHeader)
-
-app.mount("#app")
+createInertiaApp({
+    resolve: name => {
+        const pages = import.meta.glob('./views/**/*.vue', { eager: true })
+        return pages[`./views/${name}.vue`]
+    },
+    setup({ el, App, props, plugin }) {
+        createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .mount(el)
+    }
+})

@@ -10,14 +10,7 @@ export default {
         require("daisyui")
     ],
     daisyui: {
-        themes: [
-            {
-                lemonade: {
-                    ...require("daisyui/src/theming/themes")["light"],
-                    secondary: "#001110",
-                }
-            },
-        ],
+        themes: ["lemonade"],
     }
 }
 
