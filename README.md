@@ -6,7 +6,7 @@ Supplements E-Commerce to sell all kinds of products to build your fit.
 
 - Laravel
 - Vue.js
-- Typescript
+- Inertia.js
 - TailwindCSS (DaisyUI)
 - PostgreSQL
 
